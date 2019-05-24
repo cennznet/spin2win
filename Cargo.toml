@@ -1,0 +1,29 @@
+[package]
+name = "spin2win"
+version = "0.1.0"
+authors = ["Centrality Developers <developers@centrality.ai>"]
+edition = "2018"
+
+[dependencies]
+contract-sdk = { git = "ssh://git@github.com/cennznet/contract-sdk" }
+ink_core = { git = "https://github.com/paritytech/ink" }
+ink_lang = { git = "https://github.com/paritytech/ink", features = ["generate-api-description"] }
+ink_model = { git = "https://github.com/paritytech/ink" }
+parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
+
+[lib]
+name = "spin2win"
+crate-type = ["cdylib"]
+
+[features]
+default = [
+	"ink_lang/generate-api-description"
+]
+generate-api-description = [
+	"ink_lang/generate-api-description"
+]
+
+[profile.release]
+panic = "abort"
+lto = true
+opt-level = "z"
