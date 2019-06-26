@@ -10,7 +10,7 @@ contract! {
 
     impl Spin2Win {
         pub(external) fn spin(&self, player: AccountId) {
-            let prize = util::random_in_range(1_000, 100_000);
+            let prize = util::random_in_range(1, 100);
             Runtime::call(
                 player,
                 0, // gas allocation, `0` means use current meter value
