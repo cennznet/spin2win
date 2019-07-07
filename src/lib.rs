@@ -12,10 +12,10 @@ contract! {
         pub(external) fn spin(&self) {
             let prize = util::random_in_range(1, 100);
             Runtime::call(
-                env.caller(), // Use contract caller account is the player
+                env.caller(), // The contract calling account is the player
                 0,            // gas allocation, `0` means use current meter value
                 prize.into(),
-                &vec![],      // Empty input payload
+                &[],          // Empty input payload
             );
         }
     }
