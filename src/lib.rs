@@ -1,12 +1,6 @@
 #![no_std]
 
-use contract_sdk::{
-    ink_core::{self, env::DefaultSrmlTypes},
-    ink_model::{self},
-    ink_lang::contract,
-    prelude::*,
-    util,
-};
+use contract_sdk::{prelude::*, util};
 
 contract! {
     #![env = DefaultSrmlTypes]
