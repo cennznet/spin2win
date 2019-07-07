@@ -1,21 +1,27 @@
 #![no_std]
 
-/// The CENNZnet SDK
-use contract_sdk::{prelude::*, types::AccountId, util};
-use ink_lang::contract;
+use contract_sdk::{
+    ink_core::{self, env::DefaultSrmlTypes},
+    ink_model::{self},
+    ink_lang::contract,
+    prelude::*,
+    util,
+};
 
 contract! {
-    /// A contract that transfers a random amount of asset to the given player account
+    #![env = DefaultSrmlTypes]
+
+    // A contract that transfers a random amount of asset to the given player account
     struct Spin2Win {}
 
     impl Spin2Win {
-        pub(external) fn spin(&self, player: AccountId) {
+        pub(external) fn spin(&self) {
             let prize = util::random_in_range(1, 100);
             Runtime::call(
-                player,
-                0, // gas allocation, `0` means use current meter value
+                env.caller(), // Use contract caller account is the player
+                0,            // gas allocation, `0` means use current meter value
                 prize.into(),
-                &vec![], // Empty input payload
+                &vec![],      // Empty input payload
             );
         }
     }
