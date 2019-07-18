@@ -5,7 +5,7 @@ authors = ["Centrality Developers <developers@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
-contract-sdk = { git = "ssh://git@github.com/cennznet/contract-sdk" }
+contract-sdk = { rev = "cc47fbfb94034cc3fbc94c5ae4487065ccde016e", git = "ssh://git@github.com/cennznet/contract-sdk" }
 ink_core = { git = "https://github.com/paritytech/ink", rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
 ink_lang = { git = "https://github.com/paritytech/ink", features = ["generate-api-description"], rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
 ink_model = { git = "https://github.com/paritytech/ink", rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
