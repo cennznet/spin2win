@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 contract-sdk = { git = "ssh://git@github.com/cennznet/contract-sdk", version = "0.1.2", default-features = false }
-parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
+parity-codec = { version = "~4", default-features = false, features = ["derive"] }
 
 [lib]
 name = "spin2win"

@@ -1,10 +1,9 @@
 #![no_std]
 
-use contract_sdk::{prelude::*, util};
+use contract_sdk::{ink_core::env::DefaultSrmlTypes, ink_lang::contract, prelude::*, util};
 
 contract! {
     #![env = DefaultSrmlTypes]
-
     // A contract that transfers a random amount of asset to the given player account
     struct Spin2Win {}
 
