@@ -5,10 +5,7 @@ authors = ["Centrality Developers <developers@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
-contract-sdk = { rev = "cc47fbfb94034cc3fbc94c5ae4487065ccde016e", git = "https://github.com/cennznet/contract-sdk" }
-ink_core = { git = "https://github.com/paritytech/ink", rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
-ink_lang = { git = "https://github.com/paritytech/ink", features = ["generate-api-description"], rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
-ink_model = { git = "https://github.com/paritytech/ink", rev = "4a8584338af92cb1897aa7350d1d377699b137e6" }
+contract-sdk = { git = "https://github.com/cennznet/contract-sdk", version = "0.1.2", default-features = false }
 parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
 
 [lib]
@@ -17,10 +14,10 @@ crate-type = ["cdylib"]
 
 [features]
 default = [
-	"ink_lang/generate-api-description"
+	"contract-sdk/generate-api-description"
 ]
 generate-api-description = [
-	"ink_lang/generate-api-description"
+	"contract-sdk/generate-api-description"
 ]
 
 [profile.release]

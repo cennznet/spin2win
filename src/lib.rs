@@ -1,10 +1,12 @@
 #![no_std]
 
 /// The CENNZnet SDK
-use contract_sdk::{prelude::*, types::AccountId, util};
+use contract_sdk::{prelude::*, util};
+use ink_core::env::DefaultSrmlTypes;
 use ink_lang::contract;
 
 contract! {
+    #![env = DefaultSrmlTypes]
     /// A contract that transfers a random amount of asset to the given player account
     struct Spin2Win {}
 
